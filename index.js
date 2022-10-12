@@ -25,7 +25,7 @@ app.use('/mudas', rotasMudas)
 app.get('/', (req, res) => {
 
     // mostrar requisição
-    res.json({ massage: 'Oi Express' })
+    res.json({ massage: 'Oi Mostrar requisições' })
 
 })
 
@@ -42,5 +42,6 @@ mongoose
     console.log('Conectado ao MongoDB!')
     app.listen(5000)
 })
+
 .catch((err) => console.log(err))
 
