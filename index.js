@@ -4,7 +4,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
-//const Mudas = require('./models/Mudas')
 
 // forma de ler json / middleware
 app.use(
@@ -19,7 +18,6 @@ app.use(express.json())
 const rotasMudas = require('./routes/rotasMudas')
 
 app.use('/mudas', rotasMudas)
-
 
 // rota inicial // endpoint
 app.get('/', (req, res) => {
