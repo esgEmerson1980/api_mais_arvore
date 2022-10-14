@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 
 const Mudas = mongoose.model('Mudas', {
-   regiao: String,
+   id: String,
+   usuario: String,
    subprefeitura: String,
-   mes: String,
+   arvore: String,
    quantidade: Number,
-   ano: Number,  
+   data: Date,
+   cep: String,  
 })
 
 module.exports = Mudas

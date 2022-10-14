@@ -25,7 +25,7 @@ app.use('/mudas', rotasMudas)
 app.get('/', (req, res) => {
 
     // mostrar requisição
-    res.json({ massage: 'Oi Mostrar requisições' })
+    res.json({ massage: 'Mostrar requisições' })
 
 })
 

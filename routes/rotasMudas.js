@@ -6,36 +6,42 @@ const Mudas = require('../models/Mudas')
 router.post('/', async (req, res) => {
 
     // req.bory
-    const {regiao, subprefeitura, mes, quantidade, ano} = req.body
+    const {usuario, subprefeitura, arvore, quantidade, data, cep} = req.body
 
     // validação dos dados da API
-    if(!regiao){
-      res.status(422).json({ error: 'Código da região é obrigatório!'})
-      return
-    }
+    
+    if(!usuario){
+        res.status(422).json({ error: 'Nome do usuário é obrigatório!'})
+        return
+      }
     if(!subprefeitura){
-        res.status(422).json({ error: 'CSubprefeitura é obrigatório!'})
+        res.status(422).json({ error: 'Subprefeitura é obrigatório!'})
         return
     }
-    if(!mes){
-        res.status(422).json({ error: 'Mês é obrigatório!'})
+    if(!arvore){
+        res.status(422).json({ error: 'Muda é obrigatório!'})
         return
     }
     if(!quantidade){
         res.status(422).json({ error: 'Quantitativo é obrigatório!'})
         return
     }
-    if(!ano){
-        res.status(422).json({ error: 'Ano é obrigatório!'})
+    if(!data){
+        res.status(422).json({ error: 'Data é obrigatório!'})
+        return
+    }
+    if(!cep){
+        res.status(422).json({ error: 'Cep é obrigatório!'})
         return
     }
 
     const mudas = {
-        regiao,
+        usuario,
         subprefeitura,
-        mes,
+        arvore,
         quantidade,
-        ano,  
+        data,
+        cep,  
     }
 
     try{
@@ -80,13 +86,14 @@ router.get('/:id', async (req, res) => {
 router.patch('/:id', async (req, res) => {
 
     const id = req.params.id
-    const {regiao, subprefeitura, mes, quantidade, ano} = req.body
+    const {usuario, subprefeitura, arvore, quantidade, data, cep} = req.body
     const mudas = {
-        regiao,
+        usuario,
         subprefeitura,
-        mes,
+        arvore,
         quantidade,
-        ano,  
+        data,
+        cep,   
     }
     try{
         const updatedMudas = await Mudas.updateOne({_id: id}, mudas)
