@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 
 })
 
+
 //entregar uma porta
 
 const DB_USER = process.env.DB_USER
@@ -38,8 +39,8 @@ mongoose
 )
 .then(() => {
     console.log('Conectado ao MongoDB!')
-    app.listen(5000)
+    app.listen(3000)
 })
-
+    
 .catch((err) => console.log(err))
 
