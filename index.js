@@ -34,7 +34,7 @@ const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
 mongoose
   .connect(
     
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apiclustermaisarvore.7k4spzi.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apiclustermaisarvore.7k4spzi.mongodb.net/bancoapima?retryWrites=true&w=majority`
 )
   .then(() => {
     console.log("Conectado ao MongoDB em http://localhost:" + PORT);
