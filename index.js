@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8089;
 
 // forma de ler json / middleware
 app.use(
@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
   // mostrar requisição
   res.json({ massage: "Mostrar requisições" });
 });
+
 
 //entregar uma porta
 
