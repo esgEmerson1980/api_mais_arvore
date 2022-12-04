@@ -7,7 +7,8 @@ const Mudas = mongoose.model('Mudas', {
    arvore: String,
    quantidade: Number,
    data: Date,
-   cep: String,  
-})
+   cep: String,
+});
+
 
 module.exports = Mudas
